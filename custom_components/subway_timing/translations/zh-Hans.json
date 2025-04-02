@@ -1,0 +1,121 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "设置地铁到站时间",
+        "description": "请输入配置文件路径",
+        "data": {
+          "name": "名称",
+          "config_path": "配置文件路径"
+        }
+      },
+      "station": {
+        "title": "选择站点",
+        "description": "请从列表中选择一个站点",
+        "data": {
+          "station": "站点"
+        }
+      },
+      "direction": {
+        "title": "选择方向",
+        "description": "请为 {station} 站选择一个方向",
+        "data": {
+          "direction": "方向"
+        }
+      }
+    },
+    "error": {
+      "file_not_found": "找不到配置文件，请检查路径",
+      "no_stations_found": "配置文件中未找到站点信息",
+      "invalid_station": "站点无效",
+      "parse_error": "解析配置文件时出错"
+    },
+    "abort": {
+      "already_configured": "该站点和方向已经配置"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "地铁到站时间设置",
+        "data": {
+          "update_mode": "更新模式",
+          "update_interval": "基础更新间隔 (秒)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "subway_timing": {
+        "name": "地铁",
+        "state": {
+          "no_schedule": "无班次"
+        },
+        "state_attributes": {
+          "station": {
+            "name": "站点"
+          },
+          "direction": {
+            "name": "方向"
+          },
+          "friendly_wait_time": {
+            "name": "友好等待时间"
+          },
+          "next_train": {
+            "name": "下一趟列车"
+          },
+          "next_trains": {
+            "name": "未来列车"
+          },
+          "next_train_1": {
+            "name": "下一趟列车"
+          },
+          "next_train_2": {
+            "name": "第二趟列车"
+          },
+          "next_train_3": {
+            "name": "第三趟列车"
+          },
+          "next_train_1_time": {
+            "name": "下一趟列车时间"
+          },
+          "next_train_2_time": {
+            "name": "第二趟列车时间"
+          },
+          "next_train_3_time": {
+            "name": "第三趟列车时间"
+          },
+          "next_train_1_wait": {
+            "name": "下一趟列车等待"
+          },
+          "next_train_2_wait": {
+            "name": "第二趟列车等待"
+          },
+          "next_train_3_wait": {
+            "name": "第三趟列车等待"
+          },
+          "last_updated": {
+            "name": "最后更新时间"
+          }
+        }
+      }
+    }
+  },
+  "services": {
+    "refresh": {
+      "name": "刷新",
+      "description": "刷新地铁到站时间信息",
+      "fields": {
+        "station": {
+          "name": "站点",
+          "description": "站点名称（可选）"
+        },
+        "direction": {
+          "name": "方向",
+          "description": "方向名称（可选）"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "title": "地铁到站时间",
+  "config": {
+    "step": {
+      "user": {
+        "title": "设置地铁到站时间",
+        "description": "请输入配置文件路径",
+        "data": {
+          "name": "名称",
+          "config_path": "配置文件路径"
+        }
+      },
+      "station": {
+        "title": "选择站点",
+        "description": "请从列表中选择一个站点",
+        "data": {
+          "station": "站点"
+        }
+      },
+      "direction": {
+        "title": "选择方向",
+        "description": "请为 {station} 站选择一个方向",
+        "data": {
+          "direction": "方向"
+        }
+      }
+    },
+    "error": {
+      "file_not_found": "找不到配置文件，请检查路径",
+      "no_stations_found": "配置文件中未找到站点信息",
+      "invalid_station": "站点无效",
+      "parse_error": "解析配置文件时出错"
+    },
+    "abort": {
+      "already_configured": "该站点和方向已经配置"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "地铁到站时间设置",
+        "data": {
+          "update_interval": "更新间隔 (分钟)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "subway_timing": {
+        "name": "Subway",
+        "state": {
+          "no_schedule": "No Schedule"
+        },
+        "state_attributes": {
+          "station": {
+            "name": "Station"
+          },
+          "direction": {
+            "name": "Direction"
+          },
+          "friendly_wait_time": {
+            "name": "Friendly Wait Time"
+          },
+          "next_train": {
+            "name": "Next Train"
+          },
+          "next_trains": {
+            "name": "Next Trains"
+          },
+          "next_train_1": {
+            "name": "Next Train"
+          },
+          "next_train_2": {
+            "name": "Second Train"
+          },
+          "next_train_3": {
+            "name": "Third Train"
+          },
+          "next_train_1_time": {
+            "name": "Next Train Time"
+          },
+          "next_train_2_time": {
+            "name": "Second Train Time"
+          },
+          "next_train_3_time": {
+            "name": "Third Train Time"
+          },
+          "next_train_1_wait": {
+            "name": "Next Train Wait"
+          },
+          "next_train_2_wait": {
+            "name": "Second Train Wait"
+          },
+          "next_train_3_wait": {
+            "name": "Third Train Wait"
+          },
+          "last_updated": {
+            "name": "Last Updated"
+          }
+        }
+      }
+    }
+  },
+  "services": {
+    "refresh": {
+      "name": "刷新",
+      "description": "刷新地铁到站时间信息",
+      "fields": {
+        "station": {
+          "name": "站点",
+          "description": "站点名称（可选）"
+        },
+        "direction": {
+          "name": "方向",
+          "description": "方向名称（可选）"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+# python
+*.pyc
+__pycache__/
+
+# macOS
+.DS_Store
+
+# config
+info.conf

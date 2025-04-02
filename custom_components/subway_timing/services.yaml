@@ -1,0 +1,18 @@
+refresh:
+  name: 刷新
+  description: 刷新地铁到站时间信息
+  fields:
+    station:
+      name: 站点
+      description: 站点名称（可选）
+      example: "东方之门站"
+      required: false
+      selector:
+        text:
+    direction:
+      name: 方向
+      description: 方向名称（可选）
+      example: "钟南街方向"
+      required: false
+      selector:
+        text:

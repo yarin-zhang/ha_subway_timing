@@ -1,0 +1,132 @@
+views:
+  - type: sections
+    max_columns: 4
+    title: 通勤
+    path: subway
+    icon: mdi:subway
+    sections:
+      - type: grid
+        cards:
+          - type: heading
+            heading: 上班通勤
+            heading_style: title
+            icon: mdi:subway-variant
+          - type: entity
+            entity: sensor.di_tie_xxxx
+            attribute: next_train_1_wait
+            grid_options:
+              columns: 6
+              rows: 2
+            state_color: false
+            name: 东方之门站
+          - type: gauge
+            entity: sensor.di_tie_xxxx
+            min: 0
+            grid_options:
+              columns: 6
+              rows: 2
+            needle: true
+            severity:
+              green: 3
+              yellow: 1
+              red: 0
+            max: 7
+            name: 倒计时
+          - type: tile
+            entity: sensor.di_tie_xxxx
+            features_position: bottom
+            vertical: false
+            state_content:
+              - next_train_1_time
+              - friendly_wait_time
+            name: 下一趟列车
+            color: accent
+            icon: mdi:subway-alert-variant
+            grid_options:
+              columns: 12
+              rows: 1
+          - type: tile
+            entity: sensor.di_tie_xxxx
+            features_position: bottom
+            vertical: false
+            state_content:
+              - next_train_2_time
+              - next_train_2_wait
+            name: 第二趟列车
+            icon: mdi:subway-variant
+            color: primary
+          - type: tile
+            entity: sensor.di_tie_xxxx
+            features_position: bottom
+            vertical: false
+            name: 第三趟列车
+            state_content:
+              - next_train_3_time
+              - next_train_3_wait
+            color: disabled
+            icon: mdi:subway-variant
+      - type: grid
+        cards:
+          - type: heading
+            heading: 下班通勤
+            heading_style: title
+            icon: mdi:subway-variant
+          - type: entity
+            entity: sensor.di_tie_xxxx
+            attribute: next_train_1_wait
+            grid_options:
+              columns: 6
+              rows: 2
+            state_color: false
+            name: 时代广场站
+          - type: gauge
+            entity: sensor.di_tie_xxxx
+            min: 0
+            grid_options:
+              columns: 6
+              rows: 2
+            needle: true
+            max: 7
+            severity:
+              green: 3
+              yellow: 1
+              red: 0
+            name: 倒计时
+          - type: tile
+            entity: sensor.di_tie_xxxx
+            features_position: bottom
+            vertical: false
+            state_content:
+              - next_train_1_time
+              - friendly_wait_time
+            name: 下一趟列车
+            color: accent
+            icon: mdi:subway-alert-variant
+            grid_options:
+              columns: 12
+              rows: 1
+          - type: tile
+            entity: sensor.di_tie_xxxx
+            features_position: bottom
+            vertical: false
+            state_content:
+              - next_train_2_time
+              - next_train_2_wait
+            name: 第二趟列车
+            icon: mdi:subway-variant
+            color: primary
+          - type: tile
+            entity: sensor.di_tie_xxxx
+            features_position: bottom
+            vertical: false
+            name: 第三趟列车
+            state_content:
+              - next_train_3_time
+              - next_train_3_wait
+            color: disabled
+            icon: mdi:subway-variant
+    header:
+      card:
+        type: markdown
+        content: '## 通勤 🚇'
+    badges: []
